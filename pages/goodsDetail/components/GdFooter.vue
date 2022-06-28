@@ -30,6 +30,8 @@
 </template>
 <script>
 	import {customerPhone} from "../../../common/js/constant";
+  import checkFollow from "../../../http/api/checkFollow";
+
   export default {
     name: "GdFooter",
 		data() {
@@ -40,12 +42,26 @@
 		},
 		mounted() {
 			this.needSafe = this.$store.state.needSafe;
+      this.checkFollowFn();
 		},
 		methods: {
 			showPopup() {
 				this.$refs.popup.open('bottom')
-			}
+			},
+      checkFollowFn() {
+        checkFollow({
+          collectType: 0,
+          collectOpcode: this.skuCode,
+          collectOppic: 'https://b2copt-dev2021112700000085.qjclouds.com/paas/shop/2021112700000085/2022-06-13/e12aec9ad36d4256a7b3cfc770de7a3f.png',
+          collectOpcont: '卡贝森 沙发 实木沙发现代',
+          collectOpnum: '0.03',
+          goodsOrigin: 0
+        }).then(res => {
+          console.log(56, res)
+        })
+      }
 		},
+    props: ['goodsDetail', 'skuCode']
   }
 </script>
 <style lang="less" scoped>

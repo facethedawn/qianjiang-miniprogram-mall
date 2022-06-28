@@ -12,7 +12,7 @@
       <GdComment :goodsDetail = "goodsDetail"/>
       <GdIntro :goodsDetail = "goodsDetail"/>
       <view class="safe" v-if="needSafe"></view>
-      <GdFooter/>
+      <GdFooter :goodsDetail = "goodsDetail" :skuCode="skuCode"/>
     </view>
   </page-meta>
 </template>

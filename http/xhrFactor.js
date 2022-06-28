@@ -1,7 +1,8 @@
 const xhrFactory = ({
   url,
   data,
-  method = 'GET'
+  method = 'GET',
+  header
 }) => {
 	// uni.navigateTo({
 	// 	url: '/pages/index/index'
@@ -10,12 +11,18 @@ const xhrFactory = ({
     uni.request({
       url,
       header: {
-          "saas-Agent": "qj-wemini"
+        ...header,
+        "saas-Agent": "qj-wemini"
       },
       method: method,
       data,
       success:(res) => {
-         resolve(res.data)
+				if(res.data.errorCode === 'nologin') {
+					uni.navigateTo({
+						url: '/pages/login/login'
+					})
+				}
+        resolve(res.data)
       },
       fail: err => {
         reject(err)

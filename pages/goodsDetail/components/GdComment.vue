@@ -3,7 +3,7 @@
     <view class="title">
       <text class="num">全部评价 ({{commentData.total}})</text>
       <view class="all">
-        <text class="txt">查看全部</text>
+        <text class="txt" @click="goAllComment">查看全部</text>
         <text class="iconfont icon-xiangyou"/>
       </view>
     </view>
@@ -33,7 +33,7 @@ export default {
     goodsDetail: Object
   },
   mounted() {
-    
+
   },
   watch: {
     goodsDetail: function(data) {
@@ -45,6 +45,13 @@ export default {
         console.log(60, res);
         this.commentData = res
       })
+    }
+  },
+  methods: {
+    goAllComment() {
+      uni.navigateTo({
+				url: `evaluate/goodsEvaluates?goodsCode=${goodsDetail.goodsCode}`
+			})
     }
   }
 }

@@ -10,8 +10,6 @@ const store = new Vuex.Store({
 	const store = createStore({
 // #endif
 		state: {
-			"username":"foo",
-			"age":18,
 			needSafe: false,
 		},
 		mutations: {
@@ -25,4 +23,4 @@ const store = new Vuex.Store({
 		}
 	})
 
-	export default store
+	export default store;

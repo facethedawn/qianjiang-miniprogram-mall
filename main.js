@@ -1,15 +1,20 @@
 import App from './App'
 import store from './store'
+import { install as http } from "./uni_modules/gt-axios-request/js_sdk/install"
+
+
+
 
 // #ifndef VUE3
 import Vue from 'vue'
 Vue.config.productionTip = false
 Vue.prototype.$store = store;
 App.mpType = 'app'
-const app = new Vue({
+export const app = new Vue({
     store,
     ...App
 })
+Vue.use(http)
 app.$mount()
 // #endif
 

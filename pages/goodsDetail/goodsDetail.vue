@@ -43,7 +43,6 @@ export default {
   },
   mounted() {
     const that = this;
-    console.log(123123, this.$store.state.username)
     that.needSafe = getApp().globalData.needSafe
     getGoodsDetail({
       skuCode: that.skuCode

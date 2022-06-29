@@ -1,13 +1,9 @@
-import {domain} from "../domain";
-import xhrFactory from "../xhrFactor";
+import {app} from "../../main"
 
 const checkCollectExit = "/web/um/collect/checkCollectExit.json"; // 检查是否关注
 
 const checkFollow = (data) => {
-  return xhrFactory({
-    url: domain + checkCollectExit,
-    data,
-  })
+  return app.$http.get(checkCollectExit,data)
 }
 
 export default checkFollow;

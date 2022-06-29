@@ -64,8 +64,6 @@
 				for (let s of this.sizeArr) {
 					this.choosenArr.push(s.content[0].value)
 				}
-        console.log(71, this.sizeArr, this.choosenArr)
-        console.log(67,this.sizeOriginArr)
       }
     },
     methods: {
@@ -73,7 +71,6 @@
         this.$refs.popup.open('bottom');
       },
       change(e) {
-        console.log(60, e.detail.data, this.choosenArr, this.skuCode);
 				getGoodsBySize({
 					skuCode: this.skuCode,
 					specStr: this.choosenArr

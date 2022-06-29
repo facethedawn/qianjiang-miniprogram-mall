@@ -1,5 +1,5 @@
 import { domain } from "../domain";
-import xhrFactory from "../xhrFactor";
+import xhrFactory from "../xhrFactory";
 export const addShoppingGoodsBySpec = "/web/oc/shopping/addShoppingGoodsBySpec.json"; // 再次购买
 
 const getGoodsBySize = (data) => {

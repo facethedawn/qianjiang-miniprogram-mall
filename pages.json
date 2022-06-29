@@ -17,6 +17,12 @@
 			"style": {
 				"navigationBarTitleText": "登录"
 			}
+		},
+		{
+			"path": "pages/test/test",
+			"style": {
+				"navigationBarTitleText": "test"
+			}
 		}
 	],
 	"globalStyle": {

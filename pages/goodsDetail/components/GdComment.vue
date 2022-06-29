@@ -42,7 +42,6 @@ export default {
         rows: this.rows,
         goodsCode: data.goodsCode
       }).then(res => {
-        console.log(60, res);
         this.commentData = res
       })
     }
